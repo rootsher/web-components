@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html-imports-test</title>
+	<link rel="import" href="components/first-import.html" class="first-import">
+</head>
+<body>
+	<script>
+		var importDocument = document.querySelector('.first-import');
+		console.log('@@', importDocument);
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>templates-test</title>
+	<!-- "template" tag is mainly not available in IE -->
+	<template class="first-template">
+		<!-- Here image is not loaded. When template will be used, then image will be loaded. -->
+		<img src="http://html5-demos.appspot.com/static/webcomponents/images/logos/webcomponents.png">
+	</template>
+</head>
+<body>
+	<div class="container"></div>
+	<script>
+		var template = document.querySelector('.first-template');
+		var container = document.querySelector('.container');
+		// When we used template content, then image in template content will be loaded.
+		// Remove importNode method for check, what happens with network section elements in chrome web inspector.
+		var fragment = document.importNode(template.content, true);
+		var webComponentsLogo = fragment.querySelector('img');
+		container.appendChild(webComponentsLogo);
+	</script>
+</body>
+</html>

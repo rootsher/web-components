@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>shadow-dom-test</title>
+	<template>
+		<style>p { color: #F00; }</style>
+		<p><content></content></p>
+	</template>
+</head>
+<body>
+	<p class="light">Light DOM</p>
+	<p class="shadow">Shadow DOM</p>
+	<script>
+		var template = document.querySelector('template');
+		var shadow = document.querySelector('p.shadow');
+		var shadowRoot = shadow.createShadowRoot();
+		shadowRoot.appendChild(template.content);
+	</script>
+</body>
+</html>

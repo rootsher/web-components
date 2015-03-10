@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>custom-elements-test</title>
+	<script>
+		function HelloWorld() {}
+		// Here we inherit the HTMLElement.
+		HelloWorld.prototype = Object.create(HTMLElement);
+		// Here we extend own elements to chosen callback (here attached).
+		HelloWorld.prototype.createdCallback = function () {
+			console.log('Hello', this.innerHTML + '!');
+		};
+
+		document.registerElement('hello-web-components', {
+			// Default prototype is HTMLElement, if we do not use additional options (attachedCallback etc.), prototype property is not compulsory.
+			prototype: HelloWorld.prototype
+		});
+	</script>
+</head>
+<body>
+	<hello-web-components>Web Components</hello-web-components>
+</body>
+</html>

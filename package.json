@@ -1,0 +1,9 @@
+{
+    "name": "web-components",
+    "description": "Web Components - tests",
+    "author": "rootsher@gmail.com",
+    "dependencies": {
+        "express": "4.12.x"
+    },
+    "version": "0.1.0"
+}
